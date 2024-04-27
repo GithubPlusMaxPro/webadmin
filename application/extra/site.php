@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '潍坊太阳神医药有限公司',
+  'name' => '潍坊市太阳神医药有限公司',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
@@ -25,8 +25,7 @@ return array (
     'basic' => '基础配置',
     'email' => '邮件配置',
     'dictionary' => '字典配置',
-    'user' => '会员配置',
-    'example' => '示例分组',
+    'incubator' => '保温箱系统配置',
   ),
   'mail_type' => '1',
   'mail_smtp_host' => 'smtp.qq.com',
@@ -40,5 +39,12 @@ return array (
     'category1' => '分类一',
     'category2' => '分类二',
     'custom' => '自定义',
+  ),
+  'temperature_limit' => '100',
+  'temperature_low' => '100',
+  'humidity_lower' => '100',
+  'humidity_low' => '100',
+  'smsphone' => 
+  array (
   ),
 );

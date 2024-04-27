@@ -2,30 +2,37 @@
     {:build_heading()}
     <div style="margin:auto;text-align: center;">
         <h1 style="font-size: 5rem">潍坊太阳神医药有限公司温湿度数据</h1>
-        <h1>当前测点:保温箱</h1>
     </div>
+
     <div class="panel-body">
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="one">
                 <div class="widget-body no-padding">
+
                     <div id="toolbar" class="toolbar">
+
                         {:build_toolbar('refresh,add,edit,del,import')}
 
-<!--                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>-->
-<!--                        <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('incubator/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>-->
-<!--                        <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled {:$auth->check('incubator/edit')?'':'hide'}" title="{:__('Edit')}" ><i class="fa fa-pencil"></i> {:__('Edit')}</a>-->
-<!--                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('incubator/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>-->
+
+                        <!--                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>-->
+                        <!--                        <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('incubator/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>-->
+                        <!--                        <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled {:$auth->check('incubator/edit')?'':'hide'}" title="{:__('Edit')}" ><i class="fa fa-pencil"></i> {:__('Edit')}</a>-->
+                        <!--                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('incubator/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>-->
 
 
-                        
 
-                        
+
+
+                    </div>
+                    <div style ="border:solid 1px #bbbbbb; margin:auto;text-align: center;">
+                        <h1>当前测点:保温箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实时温度： ℃&nbsp;&nbsp;&nbsp; 实时湿度： ℃</h1>
                     </div>
                     <table id="table" class="table table-striped table-bordered table-hover table-nowrap"
                            data-operate-edit="{:$auth->check('incubator/edit')}"
                            data-operate-del="{:$auth->check('incubator/del')}"
                            width="100%">
                     </table>
+
                 </div>
             </div>
 

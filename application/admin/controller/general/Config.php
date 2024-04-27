@@ -42,13 +42,21 @@ class Config extends Backend
      */
     public function index()
     {
+        $type = $this->request->get('type');
         $siteList = [];
         $groupList = ConfigModel::getGroupList();
-        foreach ($groupList as $k => $v) {
-            $siteList[$k]['name'] = $k;
-            $siteList[$k]['title'] = $v;
-            $siteList[$k]['list'] = [];
+        if ($type && $groupList[$type]){
+            $siteList[$type]['name'] = $type;
+            $siteList[$type]['title'] = $groupList[$type];
+            $siteList[$type]['list'] = [];
+        }else{
+            foreach ($groupList as $k => $v) {
+                $siteList[$k]['name'] = $k;
+                $siteList[$k]['title'] = $v;
+                $siteList[$k]['list'] = [];
+            }
         }
+
 
         foreach ($this->model->all() as $k => $v) {
             if (!isset($siteList[$v['group']])) {
