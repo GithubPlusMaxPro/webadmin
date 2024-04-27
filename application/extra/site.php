@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '潍坊市太阳神医药有限公司',
+  'name' => '潍坊太阳神医药有限公司',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
