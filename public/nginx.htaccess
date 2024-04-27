@@ -1,0 +1,10 @@
+  location / {
+            index  index.html index.htm index.php;
+            #主要是这一段一定要确保存在
+            if (!-e $request_filename) {
+                rewrite  ^(.*)$  /index.php?s=/$1  last;
+                break;
+            }
+            #结束
+            #autoindex  on;
+        }
