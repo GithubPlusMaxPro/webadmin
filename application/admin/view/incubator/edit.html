@@ -1,0 +1,39 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Wdz')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-wdz" data-rule="required" class="form-control" name="row[wdz]" type="text" value="{$row.wdz|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sdz')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sdz" data-rule="required" class="form-control" name="row[sdz]" type="text" value="{$row.sdz|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Wdz1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-wdz1" class="form-control" name="row[wdz1]" type="text" value="{$row.wdz1|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sdz1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sdz1" data-rule="required" class="form-control" name="row[sdz1]" type="text" value="{$row.sdz1|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dt')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dt" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[dt]" type="text" value="{$row.dt}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>
