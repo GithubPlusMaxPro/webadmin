@@ -124,6 +124,11 @@ class Incubator extends Backend
                                 $v = Date::excelToDateTimeObject($v)->format('Y-m-d H:i:s');
                             } else if (strpos($v, '/') !== false) {
                                 $v = date('Y-m-d H:i:s', strtotime(str_replace('/', '-', $v)));
+                            } else if (preg_match('/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', $v)) {
+                                // 已经是Y-m-d H:i:s格式，无需转换
+                            } else {
+                                // 尝试将其他可能的日期格式转换为Y-m-d H:i:s
+                                $v = date('Y-m-d H:i:s', strtotime($v));
                             }
                         }
                         $row[$fieldArr[$k]] = $v;
