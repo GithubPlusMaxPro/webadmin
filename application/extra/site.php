@@ -1,10 +1,10 @@
 <?php
 
 return array (
-  'name' => '潍坊市太阳神医药有限公司',
-  'beian' => '',
+  'name' => 'ceshi',
+  'beian' => '111',
   'cdnurl' => '',
-  'version' => '1.0.1',
+  'version' => '1.0.5',
   'timezone' => 'Asia/Shanghai',
   'forbiddenip' => '',
   'languages' => 
@@ -12,7 +12,7 @@ return array (
     'backend' => 'zh-cn',
     'frontend' => 'zh-cn',
   ),
-  'fixedpage' => 'incubator',
+  'fixedpage' => 'incubator/index',
   'categorytype' => 
   array (
     'default' => '默认',
@@ -25,26 +25,18 @@ return array (
     'basic' => '基础配置',
     'email' => '邮件配置',
     'dictionary' => '字典配置',
-    'incubator' => '保温箱系统配置',
   ),
   'mail_type' => '1',
-  'mail_smtp_host' => 'smtp.qq.com',
+  'mail_smtp_host' => 'smtp.126.com',
   'mail_smtp_port' => '465',
-  'mail_smtp_user' => '',
-  'mail_smtp_pass' => '',
+  'mail_smtp_user' => 'wftysfwh',
+  'mail_smtp_pass' => 'OFPIZWMPUVGZVUMY',
   'mail_verify_type' => '2',
-  'mail_from' => '',
+  'mail_from' => '876524393@qq.com',
   'attachmentcategory' => 
   array (
     'category1' => '分类一',
     'category2' => '分类二',
     'custom' => '自定义',
-  ),
-  'temperature_limit' => '100',
-  'temperature_low' => '100',
-  'humidity_lower' => '100',
-  'humidity_low' => '100',
-  'smsphone' => 
-  array (
   ),
 );

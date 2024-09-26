@@ -27,11 +27,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         // {field: 'id', title: __('Id')},
-                        {field: 'wdz', title: __('Wdz'), operate: 'LIKE', table: table, class: 'autocontent', formatter: Table.api.formatter.content},
-                        {field: 'sdz', title: __('Sdz'), operate: 'LIKE', table: table, class: 'autocontent', formatter: Table.api.formatter.content},
-                        {field: 'wdz1', title: __('Wdz1'), operate: 'LIKE', table: table, class: 'autocontent', formatter: Table.api.formatter.content},
-                        {field: 'sdz1', title: __('Sdz1'), operate: 'LIKE', table: table, class: 'autocontent', formatter: Table.api.formatter.content},
+                        {field: 'wdz', title: __('Wdz'), operate: false, table: table, class: 'autocontent', formatter: Table.api.formatter.content},
+                        {field: 'sdz', title: __('Sdz'), operate: false, table: table, class: 'autocontent', formatter: Table.api.formatter.content},
+                        {field: 'wdz1', title: __('Wdz1'), operate: false, table: table, class: 'autocontent', formatter: Table.api.formatter.content},
+                        {field: 'sdz1', title: __('Sdz1'), operate: false, table: table, class: 'autocontent', formatter: Table.api.formatter.content},
                         {field: 'dt', title: __('Dt'), operate:'RANGE', addclass:'datetimerange', autocomplete:false},
+                        {field: 'typelist', title: __('Typelist'), searchList: {"baowenxiang":__('Typelist baowenxiang')}, formatter: Table.api.formatter.normal},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

@@ -29,7 +29,7 @@ class Incubator extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Incubator;
-
+        $this->view->assign("typelistList", $this->model->getTypelistList());
     }
     public function index()
     {

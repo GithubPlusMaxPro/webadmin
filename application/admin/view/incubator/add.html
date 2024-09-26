@@ -30,6 +30,18 @@
             <input id="c-dt" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[dt]" type="text" value="{:date('Y-m-d H:i:s')}">
         </div>
     </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Typelist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-typelist" data-rule="required" class="form-control selectpicker" name="row[typelist]">
+                {foreach name="typelistList" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

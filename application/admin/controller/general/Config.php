@@ -42,7 +42,7 @@ class Config extends Backend
      */
     public function index()
     {
-        $type = $this->request->get('type');
+        $type = request()->param('type');
         $siteList = [];
         $groupList = ConfigModel::getGroupList();
         if ($type && $groupList[$type]){

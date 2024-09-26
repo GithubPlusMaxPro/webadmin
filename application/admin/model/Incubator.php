@@ -25,14 +25,23 @@ class Incubator extends Model
 
     // 追加属性
     protected $append = [
-
+        'typelist_text'
     ];
     
 
     
+    public function getTypelistList()
+    {
+        return ['baowenxiang' => __('Typelist baowenxiang')];
+    }
 
 
-
+    public function getTypelistTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['typelist']) ? $data['typelist'] : '');
+        $list = $this->getTypelistList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
 
 
 
