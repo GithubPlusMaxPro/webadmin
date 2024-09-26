@@ -7,13 +7,14 @@
                 <div class="widget-body no-padding">
                     <div id="toolbar" class="toolbar">
                         {:build_toolbar('refresh,add,edit,del,import')}
+                        
                         <!-- <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
                         <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('incubator/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>
                         <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled {:$auth->check('incubator/edit')?'':'hide'}" title="{:__('Edit')}" ><i class="fa fa-pencil"></i> {:__('Edit')}</a>
                         <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('incubator/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
                          -->
 
-                        
+                        <a href="/tmp_excel.xlsx" class="btn btn-info btn-download" title="{:__('导入模板下载')}"><i class="fa fa-download"></i> {:__('导入模板下载')}</a>
 
                         
                     </div>
