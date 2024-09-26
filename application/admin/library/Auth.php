@@ -580,4 +580,60 @@ class Auth extends \fast\Auth
     {
         return $this->_error ? __($this->_error) : '';
     }
+
+    /**
+     * 获取当前管理员所属的角色ID，包括上级角色组（最多到二级，排除ID为1的组）
+     *
+     * @return array
+     */
+    public function getRoleIds()
+    {
+        $groups = $this->getGroups();
+        $roleIds = [];
+        foreach ($groups as $group) {
+            if ($group['group_id'] != 1) {
+                $roleIds[] = $group['group_id'];
+                // 获取上级角色组，最多到二级
+                $parentIds = $this->getParentGroupIds($group['group_id']);
+                $roleIds = array_merge($roleIds, $parentIds);
+            }
+        }
+        return array_unique($roleIds);
+    }
+
+    /**
+     * 获取指定角色组的所有上级角色组ID，最多取到二级，排除ID为1的组
+     *
+     * @param int $groupId
+     * @param int $level 当前级别，用于递归控制
+     * @return array
+     */
+    protected function getParentGroupIds($groupId, $level = 0)
+    {
+        $parentIds = [];
+        if ($level >= 2) {
+            return $parentIds;
+        }
+        
+        $group = \app\admin\model\AuthGroup::get($groupId);
+        if ($group && $group['pid'] && $group['pid'] != 1) {
+            $parentIds[] = $group['pid'];
+            $parentIds = array_merge($parentIds, $this->getParentGroupIds($group['pid'], $level + 1));
+        }
+        return $parentIds;
+    }
+
+    /**
+     * 获取当前角色组所有管理员ID
+     *
+     * @return array
+     */
+    public function getRoleAdminIds()
+    {
+        $roleIds = $this->getRoleIds();
+        $adminIds = \app\admin\model\AuthGroupAccess::where('group_id', 'in', $roleIds)
+            ->column('uid');
+
+        return array_unique($adminIds);
+    }
 }

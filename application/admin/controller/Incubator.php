@@ -18,7 +18,7 @@ use PhpOffice\PhpSpreadsheet\Shared\Date;
  */
 class Incubator extends Backend
 {
-    protected $dataLimit = 'auth'; //默认基类中为false，表示不启用，可额外使用auth和personal两个值
+    protected $dataLimit = 'all'; //默认基类中为false，表示不启用，可额外使用auth和personal两个值
     protected $dataLimitField = 'admin_id'; //数据关联字段,当前控制器对应的模型表中必须存在该字段
     /**
      * Incubator模型对象

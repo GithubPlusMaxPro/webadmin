@@ -255,7 +255,7 @@ class Backend extends Controller
 
     /**
      * 生成查询所需要的条件,排序方式
-     * @param mixed   $searchfields   快速查询的字段
+     * @param mixed   $searchfields   快��查询的字段
      * @param boolean $relationSearch 是否关联查询
      * @return array
      */
@@ -439,21 +439,39 @@ class Backend extends Controller
 
     /**
      * 获取数据限制的管理员ID
-     * 禁用数据限制时返回的是null
-     * @return mixed
+     * 
+     * @return array|null 返回限制的管理员ID数组,或者null表示不限制
      */
     protected function getDataLimitAdminIds()
     {
+        // 如果没有设置数据限制,返回null
         if (!$this->dataLimit) {
             return null;
         }
+        
+        // 如果是超级管理员,不做限制
         if ($this->auth->isSuperAdmin()) {
             return null;
         }
+        
         $adminIds = [];
-        if (in_array($this->dataLimit, ['auth', 'personal'])) {
-            $adminIds = $this->dataLimit == 'auth' ? $this->auth->getChildrenAdminIds(true) : [$this->auth->id];
+        
+        // 根据数据限制类型获取管理员ID
+        if (in_array($this->dataLimit, ['auth', 'personal', 'all'])) {
+            if ($this->dataLimit == 'auth') {
+                // auth类型:获取当前管理员及下级管理员ID
+                $adminIds = $this->auth->getChildrenAdminIds(true);
+            } elseif ($this->dataLimit == 'personal') {
+                // personal类型:仅限当前管理员ID
+                $adminIds = [$this->auth->id];
+
+            } elseif ($this->dataLimit == 'all') {
+                // all类型:获取当前角色组所有管理员ID
+                $adminIds = $this->auth->getRoleAdminIds();
+
+            }
         }
+
         return $adminIds;
     }
 
