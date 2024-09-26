@@ -15,10 +15,6 @@ return array (
   'fixedpage' => 'incubator/index',
   'categorytype' => 
   array (
-    'default' => '默认',
-    'page' => '单页',
-    'article' => '文章',
-    'test' => 'Test',
   ),
   'configgroup' => 
   array (

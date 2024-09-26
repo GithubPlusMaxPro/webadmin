@@ -1,11 +1,20 @@
 <?php
 
 return [
-    'Wdz'                  => '测点1温度值',
-    'Sdz'                  => '测点1湿度值',
-    'Wdz1'                 => '测点2温度值',
-    'Sdz1'                 => '测点2湿度值',
-    'Dt'                   => '监测时间',
-    'Typelist'             => '监测点',
-    'Typelist baowenxiang' => '保温箱'
+    'Sale_time'       => '销售时间',
+    'Customer'        => '销售客户',
+    'Product_code'    => '商品编号',
+    'Product_name'    => '商品名称',
+    'Specification'   => '规格',
+    'Manufacturer'    => '生产厂家',
+    'Unit'            => '单位',
+    'Quantity'        => '数量',
+    'Sale_price'      => '售价',
+    'Total_amount'    => '售价金额',
+    'Batch_number'    => '批号',
+    'Expiry_date'     => '有效期',
+    'Document_number' => '单据号',
+    'Supplier'        => '供应商',
+    'Storage_time'    => '入库时间',
+    'Customer_branch' => '销售客户分支机构'
 ];
