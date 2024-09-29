@@ -32,6 +32,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'quantity', title: __('Quantity')},
                         {field: 'purchase_price', title: __('Purchase_price'), operate:'BETWEEN'},
                         {field: 'batch_number', title: __('Batch_number'), operate: 'LIKE'},
+                        {field: 'manufacturer', title: __('生产厂家'), operate: 'LIKE'},
+                        {field: 'total_amount', title: __('金额'), operate: 'LIKE'},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

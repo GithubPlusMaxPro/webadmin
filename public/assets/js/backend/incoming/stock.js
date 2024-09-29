@@ -38,6 +38,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'batch_number', title: __('Batch_number'), operate: 'LIKE'},
                         {field: 'expiry_date', title: __('Expiry_date'), operate:'RANGE', addclass:'datetimerange', autocomplete:false},
                         {field: 'supplier', title: __('Supplier'), operate: 'LIKE'},
+                        {field: 'manufacturer', title: __('生产厂家'), operate: 'LIKE'},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
