@@ -27,7 +27,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
+                        // {field: 'id', title: __('Id')},
                         {field: 'sale_time', title: __('Sale_time'), operate:'RANGE', addclass:'datetimerange', autocomplete:false},
                         {field: 'customer', title: __('Customer'), operate: 'LIKE'},
                         {field: 'product_code', title: __('Product_code'), operate: 'LIKE'},

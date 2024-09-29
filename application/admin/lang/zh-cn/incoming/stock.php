@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Id'            => '主键ID,自动增长',
+    'Id'            => 'ID',
     'Entry_time'    => '入库时间',
     'Product_name'  => '商品名称',
     'Specification' => '规格',
